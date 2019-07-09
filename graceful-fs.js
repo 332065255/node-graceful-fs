@@ -1,4 +1,10 @@
-var fs = require('fs')
+
+var fs
+try {
+  fs = require('fs')
+} catch (_) {
+  fs = require('@skpm/fs')
+}
 var polyfills = require('./polyfills.js')
 var legacy = require('./legacy-streams.js')
 var clone = require('./clone.js')
